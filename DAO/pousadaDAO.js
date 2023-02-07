@@ -16,5 +16,22 @@ const dao = {
             })
         })
     },
+    pegaPousadaCliente: (nome) => {
+        const PEGA_POUSADA = `
+        SELECT * FROM POUSADA
+        WHERE nome = ?
+        `
+        return new Promise((resolve, reject) => {
+            db.get(PEGA_POUSADA, nome, (error, row) => {
+                if (error)
+                    reject(error)
+                else
+                    resolve(row)
+            })
+        })
+    }
 }
+
+
+
 export default dao
