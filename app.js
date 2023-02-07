@@ -4,7 +4,9 @@ import pousadaController from './controller/pousada_controller.js'
 
 
 const app = express()
+
 app.use(cors())
+
 const port = 3009
 
 app.use(express.json())
